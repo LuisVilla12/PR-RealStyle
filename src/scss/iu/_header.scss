@@ -1,0 +1,39 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+.header {
+    background-image: linear-gradient(to bottom, v.$primario 0%, v.$primario 100%), url(../img/imagenHeader.jpg);
+    opacity: .8, 1;
+}
+
+.barra {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 2rem 0;
+    @include m.tablet {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    &__logo {
+        img {
+            max-width: 25rem;
+            height: 10rem;
+        }
+    }
+}
+
+.nav {
+    &__enlace {
+        display: block;
+        text-align: center;
+        color: v.$blanco;
+        margin: 2rem 0;
+        @include m.tablet {
+            display: inline-block;
+            margin: 0 2rem 0 0;
+            &:last-of-type {
+                margin-right: 0;
+            }
+        }
+    }
+}
