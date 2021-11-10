@@ -1,15 +1,55 @@
 @use 'base/variables' as v;
 @use 'base/mixins' as m;
+.notavif.notwebp .header {
+    background-image: linear-gradient(to right, transparentize(v.$primario, .1) 0%, transparentize(v.$primario, .1) 100%), url(../img/header_bg.jpg);
+}
+
+.webp .header {
+    background-image: linear-gradient(to right, transparentize(v.$primario, .1) 0%, transparentize(v.$primario, .1) 100%), url(../img/header_webp);
+}
+
+.avif .header {
+    background-image: linear-gradient(to right, transparentize(v.$primario, .1) 0%, transparentize(v.$primario, .1) 100%), url(../img/header_bg.avif);
+}
+
 .header {
-    background-image: linear-gradient(to bottom, v.$primario 0%, v.$primario 100%), url(../img/imagenHeader.jpg);
-    opacity: .8, 1;
+    padding: 3rem 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    &__contenido {
+        padding: 3rem 0;
+    }
+    &__heading {
+        font-size: 3rem;
+        color: v.$blanco;
+        font-weight: bold;
+        text-align: center;
+        @include m.tablet {
+            text-align: left;
+            font-size: 4rem;
+        }
+    }
+    &__descripcion {
+        display: none;
+        text-align: justify;
+        color: v.$blanco;
+        @include m.tablet {
+            display: block;
+        }
+    }
+    &__imagen {
+        display: none;
+        @include m.tablet {
+            display: block;
+        }
+    }
 }
 
 .barra {
     display: flex;
     align-items: center;
     flex-direction: column;
-    padding: 2rem 0;
     @include m.tablet {
         flex-direction: row;
         justify-content: space-between;
