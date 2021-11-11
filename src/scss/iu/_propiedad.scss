@@ -4,40 +4,47 @@
     padding: 5rem 0;
     &__heading {
         font-weight: 400;
-        text-align: center;
         margin: 2rem 0;
         span {
             font-weight: bold
         }
-        @include m.tablet {
-            text-align: left;
-        }
     }
     &__grid {
-        padding: 3rem;
+        padding: 1rem;
         display: grid;
         grid-template-columns: repeat(6, 30rem);
-        column-gap: 3rem;
+        column-gap: 3.5rem;
         overflow-y: hidden;
         overflow-x: scroll;
         scroll-snap-type: x mandatory;
         @include m.telefono {
+            padding: 3rem 3rem 3rem 0;
             @include m.grid(2, 2rem);
             overflow-x: hidden;
         }
         @include m.tablet {
             @include m.grid(3, 2rem);
-            padding: 0;
         }
     }
 }
 
 .propiedad {
+    background-color: v.$blanco;
+    border-radius: 1rem;
     scroll-snap-align: center;
     &__nombre {
-        text-align: center;
         font-size: 2.3rem;
-        margin: 2rem 0;
+        margin: 0;
+        color: v.$blanco;
+        position: absolute;
+        bottom: 1rem;
+        left: 1rem;
+    }
+    &__imagen {
+        aspect-ratio: 1/.7;
+        background-size: cover;
+        background-repeat: no-repeat;
+        position: relative;
     }
     &__contenido {
         padding: 1rem;
@@ -57,6 +64,12 @@
     }
     &__boton {
         @include m.boton(v.$primario, v.$blanco);
-        margin: 0 auto;
+        display: block;
+    }
+    @for $i from 1 to 7 {
+        $imagen: '../img/propiedad_'+$i+'.jpg';
+        &:nth-child(#{$i}) &__imagen {
+            background-image: linear-gradient(to bottom, transparentize(v.$negro, 1) 0%, transparentize(v.$negro, 1) 75%, transparentize(v.$negro, .2)), url($imagen);
+        }
     }
 }

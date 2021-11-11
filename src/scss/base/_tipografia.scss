@@ -17,8 +17,9 @@ h2 {
     &::after {
         content: '';
         display: block;
-        width: 3rem;
-        height: .3rem;
+        width: 15rem;
+        height: .5rem;
+        background-image: linear-gradient(to right, v.$primario 0%, v.$primario 50%, lighten(v.$primario, 20%) 50%, lighten(v.$primario, 40%) 100%);
     }
 }
 
