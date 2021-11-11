@@ -1,0 +1,56 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+.destacada {
+    padding: 3rem 0;
+    margin-bottom: 5rem;
+    background-image: linear-gradient(to bottom, transparentize(v.$primario, 1) 0%, transparentize(v.$primario, 1) 50%, v.$primario 50%, v.$primario 100%), url(../img/destacada.jpg);
+    @include m.tablet {
+        background-image: linear-gradient(to right, transparentize(v.$primario, 1) 0%, transparentize(v.$primario, 1) 50%, v.$primario 50%, v.$primario 100%), url(../img/destacada.jpg);
+    }
+    &__grid {
+        display: grid;
+        grid-template-rows: repeat(2, 40rem);
+        @include m.telefono {
+            grid-template-rows: repeat(2, 35rem);
+        }
+        @include m.tablet {
+            gap: 2rem;
+            grid-template-rows: unset;
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+    &__contenido {
+        grid-row: 2/3;
+        grid-column: 1/2;
+        padding: 2rem;
+        @include m.tablet {
+            grid-row: 1/2;
+            grid-column: 2/3;
+        }
+    }
+    &__heading {
+        text-align: center;
+        color: v.$blanco;
+        @include m.tablet {
+            text-align: left;
+        }
+    }
+    &__texto {
+        color: v.$blanco;
+        text-align: justify;
+    }
+    &__enlace {
+        @include m.boton(v.$blanco, v.$primario);
+        display: block;
+    }
+    &__precio {
+        font-size: 2.5rem;
+        text-align: center;
+        color: v.$blanco;
+        font-weight: bold;
+        span {
+            font-weight: 400;
+        }
+        margin-top: 0;
+    }
+}
