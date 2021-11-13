@@ -30,6 +30,7 @@
     @include m.telefono {
         background-position: center, -30rem -20rem;
     }
+    //FIXME: Tamaño de la imagen en tablet
     @include m.tablet {
         background-position: center, -35rem -30rem;
     }

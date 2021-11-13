@@ -67,7 +67,7 @@
         display: block;
     }
     @for $i from 1 to 7 {
-        $imagen: '../img/propiedad_'+$i+'.jpg';
+        $imagen: '../img/propiedad_'+$i+'.webp';
         &:nth-child(#{$i}) &__imagen {
             background-image: linear-gradient(to bottom, transparentize(v.$negro, 1) 0%, transparentize(v.$negro, 1) 75%, transparentize(v.$negro, .2)), url($imagen);
         }
