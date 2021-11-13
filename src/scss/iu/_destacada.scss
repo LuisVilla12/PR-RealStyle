@@ -4,8 +4,15 @@
     padding: 3rem 0;
     margin-bottom: 5rem;
     background-image: linear-gradient(to bottom, transparentize(v.$primario, 1) 0%, transparentize(v.$primario, 1) 50%, v.$primario 50%, v.$primario 100%), url(../img/destacada.jpg);
+    background-size: 100%, cover;
+    background-position: center, -45rem -20rem;
+    background-repeat: no-repeat;
+    @include m.telefono {
+        background-position: center, -30rem -20rem;
+    }
     @include m.tablet {
         background-image: linear-gradient(to right, transparentize(v.$primario, 1) 0%, transparentize(v.$primario, 1) 50%, v.$primario 50%, v.$primario 100%), url(../img/destacada.jpg);
+        background-position: center, -35rem -30rem;
     }
     &__grid {
         display: grid;
