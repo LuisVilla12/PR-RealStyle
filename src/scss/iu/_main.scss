@@ -34,13 +34,16 @@
         }
     }
     &__img {
-        height: 30rem;
+        height: 35rem;
         object-fit: cover;
     }
     &__contenido {
-        padding: 2rem 2rem 2rem 0;
+        padding: 2rem;
         @include m.telefono {
             grid-column: 3/6;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
     }
     &__heading {
@@ -54,6 +57,7 @@
         color: v.$negro;
         span {
             color: v.$primario;
+            font-weight: bold;
         }
     }
     &__descripcion {
