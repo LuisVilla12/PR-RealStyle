@@ -23,18 +23,32 @@
 
 .testimonial {
     margin: 3rem 0;
-    @include m.tablet {
+    background-color: v.$blanco;
+    @include m.telefono {
         display: grid;
-        grid-template-columns: 1fr 2fr;
+        grid-template-columns: repeat(5, 1fr);
+    }
+    &__imagen {
+        @include m.telefono {
+            grid-column: 1/3;
+        }
     }
     &__img {
-        aspect-ratio: 1/1;
+        height: 30rem;
+        object-fit: cover;
     }
     &__contenido {
-        padding: 2rem;
+        padding: 2rem 2rem 2rem 0;
+        @include m.telefono {
+            grid-column: 3/6;
+        }
     }
     &__heading {
         margin: 0;
+        text-align: center;
+        @include m.tablet {
+            text-align: left;
+        }
     }
     &__meta {
         color: v.$negro;
@@ -48,5 +62,53 @@
     }
     &__boton {
         @include m.boton(v.$primario, v.$blanco);
+        display: block;
+        @include m.tablet {
+            display: inline-block;
+        }
+    }
+}
+
+.aside {
+    margin: 5rem 0;
+    @include m.tablet {
+        margin: 0;
+    }
+    &__heading {
+        @include m.desktop {
+            span {
+                display: block;
+            }
+        }
+    }
+    &__imagen {
+        width: 20rem;
+        margin: 0 auto;
+    }
+    &__contenido {
+        background-color: v.$blanco;
+        margin-top: -10rem;
+        padding: 10rem 3rem 3rem 3rem;
+        border-radius: 2rem;
+    }
+    &__nombre {
+        text-align: center;
+        font-size: 2rem;
+        margin: 1rem 0;
+    }
+    &__texto {
+        text-align: justify;
+        position: relative;
+        &::before {
+            position: absolute;
+            content: '';
+            display: block;
+            background-image: url(../img/quote.svg);
+            background-repeat: no-repeat;
+            width: 2rem;
+            height: 1rem;
+            top: 0;
+            left: -1.5rem;
+        }
     }
 }
