@@ -4,7 +4,47 @@
     background-color: v.$primario;
     &__contenido {
         @include m.tablet {
-            @include m.grid(3, 1rem);
+            @include m.grid(3, 4rem);
         }
+        padding: 2rem 0;
+    }
+    &__heading {
+        color: v.$blanco;
+        text-align: center;
+        @include m.tablet {
+            text-align: left;
+        }
+    }
+    &__enlace {
+        display: block;
+        margin-bottom: 1rem;
+        color: v.$blanco;
+        text-align: center;
+        @include m.tablet {
+            text-align: left;
+        }
+    }
+    &__texto-nosotros {
+        color: v.$blanco;
+        text-align: center;
+        @include m.tablet {
+            text-align: justify;
+        }
+    }
+    &__logo {
+        display: none;
+        @include m.tablet {
+            display: grid;
+            place-items: center;
+        }
+    }
+    .todos {
+        background-color: darken($color: v.$primario, $amount: 1);
+    }
+    .copy {
+        text-align: center;
+        margin: 0;
+        color: v.$blanco;
+        font-size: 2rem;
     }
 }
