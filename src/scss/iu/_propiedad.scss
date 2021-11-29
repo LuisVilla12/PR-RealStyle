@@ -42,7 +42,7 @@
     }
     &__imagen {
         aspect-ratio: 1/.7;
-        background-size: cover;
+        background-size: auto 150%;
         background-repeat: no-repeat;
         position: relative;
     }
